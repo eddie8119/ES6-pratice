@@ -8,3 +8,6 @@
 
 // ssr
 // 以前的伺服器渲染 是前後端混在一起 / 現在是透過後端提供API 前端利用SSR工具 做到伺服器渲染 (請意識傳統/現代 後端渲染的差異(就是API))
+
+// 參考資料
+// https://www.youtube.com/watch?v=X8j5E6ojq6M
