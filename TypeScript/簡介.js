@@ -11,3 +11,5 @@
 // 編譯時，會將型別宣告和型別相關的程式碼全部刪除，只留下能執行的JavaScript 程式
 
 // 賦值後才能使用，否則就會報錯。
+
+// 教材:https://wangdoc.com/typescript/
