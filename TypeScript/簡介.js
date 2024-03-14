@@ -12,4 +12,6 @@
 
 // 賦值後才能使用，否則就會報錯。
 
-// 教材:https://wangdoc.com/typescript/
+// 教材:
+// https://wangdoc.com/typescript/
+// https://learntypescript.dev/04/l3-type-aliases
