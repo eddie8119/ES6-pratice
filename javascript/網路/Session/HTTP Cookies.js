@@ -24,5 +24,3 @@
 // sessionStorage:
 // 兩個不同的分頁是有可能共用同一份 sessionStorage 的。
 // 會「複製」一份到新開的 tab 去
-
-// https://pjchender.dev/webdev/web-session-cookie/
