@@ -5,7 +5,7 @@
 // 都能為物件類型命名
 
 // 差異:
-// （1）type能夠表示非物件類型，而interface只能表示物件類型
+// （1）type也能夠表示非物件類型(但是use the primitive type更簡單xd)，而interface只能表示物件類型
 // （2）interface可以繼承其他類型，type不支援繼承。
 // （3）同名interface會自動合併，同名type則會報錯 (在第三方庫上添加缺失的類型資訊非常有用)
 // 只有type可以組成聯合類型
