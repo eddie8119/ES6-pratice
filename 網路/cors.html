@@ -1,0 +1,21 @@
+CORS跨源资源共享是什么? 5分钟搞懂: https://www.youtube.com/watch?v=EV9zH9siR7Y
+在後端配置
+
+跨域請求:
+一類:
+二類:
+
+
+是一種機制，它允許瀏覽器向同源之外的伺服器發送AJAX 請求，並允許伺服器回傳回應
+
+
+cors
+acess-control-allow-origin 後端伺服器加入以下這段 允許特定網域存取該網站的資源
+const cors = require("cors");
+app.use(
+  cors({
+    origin: "http:....",
+  })
+);
+
+res.header("Acess-Control-Allow-Origin", "*")

@@ -1,0 +1,22 @@
+// JavaScript script标签 async 和 defer的区别
+async 和 defer載入行為相同，都告訴瀏覽器下載腳本時繼續解析 HTML，從而避免阻塞頁面的渲染。
+差異在於它們執行時的行為
+async 下載腳本後，它會立即執行，中斷 HTML 解析。這對於不依賴任何 DOM 元素或其他腳本的腳本有用。
+defer 腳本的執行推遲到 HTML 解析完成之後。確保腳本需要與 DOM 交互的情境
+
+
+何時使用非同步:
+適合優先順序非常高的 JavaScript 資源
+通常保留給完全獨立且不依賴其他 JavaScript 資源首先運行的檔案
+
+何時使用延遲:
+資源對於頁面的初始渲染並不重要
+是獲得最佳頁面速度和使用者體驗的最佳選擇
+
+defer 屬性的優點: 
+不會減慢初始頁面載入速度 
+無法阻止頁面上其他元素（例如圖像）的解析
+
+
+多讀這篇文章:
+https://pagespeedchecklist.com/async-and-defer#loading-process
