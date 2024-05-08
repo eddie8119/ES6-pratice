@@ -1,0 +1,17 @@
+<!-- css -->
+css下載不會阻塞dom解析 但會阻塞dom渲染
+瀏覽器會等待css下載 並完成 才繼續建構render樹
+
+<!-- css加載優化策略 -->
+媒體查詢
+非關鍵樣式內連到html
+rel屬性 設為preload prefatch 幫助瀏覽器預加載css
+
+<!-- js -->
+異步載入
+async: 執行順序不確定 適合沒有依賴順序 / 沒有dom操作的
+defer: 適合依賴順序 / 有dom操作的
+
+<!--  -->
+Web前端面试题：加载CSS和JS文件是否会阻塞HTML的渲染？
+https://www.bilibili.com/video/BV14p421Q7fr/?spm_id_from=333.788.recommend_more_video.19

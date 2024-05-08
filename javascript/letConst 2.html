@@ -1,0 +1,24 @@
+<!-- -->
+var -函數聲明作用域 
+let 和 const -「區塊」作用域，只有在「區塊」{}裡面才看得到
+
+if (true) {
+    var a = 1;   
+}
+console.log(a); // 1
+var沒有函式 就會是一個 global 變數。
+因此上方 js 在退出塊作用域時 不會銷毀變量
+
+<!--  -->
+重點:
+作用域區隔
+誰會hosting
+IIFE 原理-讓 var 變成一個區域變數呢？答案是需要用一個函式把它包起來
+
+<!--  -->
+用 IIFE (Immediately-Invoked Function Expressions) 模擬區塊作用域 (block-level scope)
+IIFE 可以用來捕捉環境中的變數，複製一份讓它變成一個區域變數
+
+<!--  -->
+只要看這文章就好了
+https://www.shubo.io/javascript-hoisting/

@@ -1,0 +1,7 @@
+<!-- 物件複製方法 -->
+let obj = {}
+
+let obj1 = object.assign({}, obj) 淺層
+let obj2 = {...obj} 淺層
+let obj3 = json.parse(json.stringify(obj)) 深層
+let obj4 = structuredClone(obj) 深層

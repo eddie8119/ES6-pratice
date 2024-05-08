@@ -1,0 +1,41 @@
+<!--  -->
+var、function 有 Hoisting 的效果
+重點
+function 的宣告也會提升而且優先權比較高 ( function 的提升會優先於 var 的)
+function > parameter （參數） > var 宣告
+只有宣告會提升，賦值不會提升
+
+
+let 跟 const 也有 hoisting 只是 hoisting 後會報錯 (只要在 TDZ 期間試著存取變數值，就會報錯)
+
+<!-- 為什麼我們需要 hoisting -->
+解決:你不可能同時做到 A 在 B 上面而 B 又在 A 上面。
+
+
+<!-- execution context -->
+在進入 EC 的時候，會按照以下順序把東西放到 VO
+對於參數，它會直接被放到 VO 裡面去，
+如果參數沒有值的話，那它的值會被初始化成 undefined。
+<!-- creation phase -->
+在這階段，會一行行掃code 吊到最上面
+<!-- creation phase 階段 遇到var function 差異 -->
+遇到var 留一個內存 但不給值
+遇到function 並把整個function存起來 (function 要在第一個字才行  表達式的function)
+<!-- creation phase 階段 function 重複宣告 -->
+function 後者會覆蓋 (注意多複習)
+https://www.bilibili.com/video/BV1BN411n7gp/?spm_id_from=333.788 複習 3:00
+
+<!-- excute phase 階段-->
+<!-- let const -->
+有hoisting 但不給初始值
+
+<!-- 編譯與直譯 -->
+JavaScript 是直譯型語言，不代表 JavaScript 不能有編譯器
+直譯器內部的運作方式都是先把原始碼編譯成某種中間碼再去執行，所以編譯這個步驟還是很常見的，而 JS 也是這樣運作的
+直譯器跟編譯器最大的差別在於「執行」
+
+<!-- hoisting es3 vo --> 帶看
+https://hackmd.io/@Heidi-Liu/note-js201-hoisting
+<!--  -->
+多看這文章
+https://blog.techbridge.cc/2018/11/10/javascript-hoisting/

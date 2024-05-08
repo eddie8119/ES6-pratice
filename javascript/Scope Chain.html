@@ -1,0 +1,21 @@
+<!-- Scope Chain -->
+讀取變數的決定 在哪裡被寫的 而不是在哪裡被呼叫
+
+<!--  -->
+不要使用 .eval() .with 因為會改變 scope chain
+
+<!-- leaking of global variables -->
+function foo() {
+    height = 10;
+}
+要加上'use strict'才能避免這個問題
+
+<!-- variables 問題 -->
+覆蓋變數
+memory leak
+
+<!-- iife 避免variables 上面問題 -->
+let const 出來後 就很少用到了
+
+
+<!-- block scope / funcation scope  -->
