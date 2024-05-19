@@ -1,10 +1,17 @@
 記住被創造的當下的環境以及變數
 closure 就是一個函式能夠存取自己被宣告時的環境中的變數
+變量私有化 外部可以訪問內部變量 但無法改動內部變量
 
 <!-- 特性 -->
 內層區塊可以存取定義在外層區塊的變數
 函式 可以當作 另一個函式的回傳值
 保留環境 (用到前面提過的兩個特性：函式可以存取外層變數，以及函式可以作為回傳值)
+
+<!-- return -->
+不一定要有 return
+是外面想要取得裡面的變數時，才需要 return
+
+<!-- 內存洩漏 -->
 
 <!--  -->
 https://www.shubo.io/javascript-closure/
@@ -20,3 +27,7 @@ function makeFunc() { // 1
   
   let func1 = makeFunc(); // 5
   func1();
+
+  <!--  -->
+  影片不錯
+  https://www.bilibili.com/video/BV1ot4y1j7W2/?spm_id_from=333.788

@@ -1,0 +1,37 @@
+<!-- var 和 let 的區别 -->
+    <!-- window -->
+    "在全局定義時" 注意這前提
+    var 定義的變量會被添加到 window 對象上 作為window屬性
+    let 定義的變量不會
+
+    <!-- 作用域 -->
+    var -函數聲明作用域 而不是塊作用域
+    let 和 const -「區塊」作用域，只有在「區塊」{}裡面才看得到
+
+    if (true) {
+        var a = 1;   
+    }
+    console.log(a); // 1
+    var沒有函式 就會是一個 global 變數。
+    這是塊作用域  因此上方 js 在退出塊作用域時 不會銷毀變量
+
+    <!-- hoisting -->
+    遍歷整個代碼
+    var: 只有提升聲明，初始化賦值不會提升
+    let: 暫時性死區 無法訪問
+
+    <!-- 為什麼var重新定義不會錯 -->
+    你在window屬性重新賦值 只是修改 所以不會錯
+<!--  -->
+重點:
+作用域區隔
+誰會hosting
+IIFE 原理-讓 var 變成一個區域變數呢？答案是需要用一個函式把它包起來
+
+<!--  -->
+用 IIFE (Immediately-Invoked Function Expressions) 模擬區塊作用域 (block-level scope)
+IIFE 可以用來捕捉環境中的變數，複製一份讓它變成一個區域變數
+
+<!--  -->
+只要看這文章就好了
+https://www.shubo.io/javascript-hoisting/

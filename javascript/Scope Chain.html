@@ -10,12 +10,17 @@ function foo() {
 }
 要加上'use strict'才能避免這個問題
 
-<!-- variables 問題 -->
-覆蓋變數
-memory leak
+<!-- 全域variables 問題 -->
+1.寫很多全域變數的問題 - 協作取名覆蓋風險
+2.memory leak
 
-<!-- iife 避免variables 上面問題 -->
-let const 出來後 就很少用到了
+    <!-- iife 避免variables 上面問題 -->
+    run as soon as defined
+
+    <!-- iife -->
+    let const 出來後 就很少用到了
+    打造自己 私有領域
+    不會洩漏 外面拿不到     
 
 
 <!-- block scope / funcation scope  -->

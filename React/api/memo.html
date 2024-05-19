@@ -1,0 +1,31 @@
+props 没有改变的情况下跳过重新渲染
+
+
+<!--  -->
+记忆化的（memoized）组件
+记忆化是一种性能优化，而非保证。
+
+<!-- 参数 -->
+接受 函数组件和 forwardRef 组件
+
+<!-- 使用 context 更新 -->
+context 发生变化时，它仍将重新渲染
+记忆化只成立在 从父组件传递
+
+<!-- 最小化 props 的变化 -->
+    <!-- Object.is -->
+    prop 浅层相等的话，组件就会重新渲染
+    Object.is({}, {}) 为 false
+
+    <!-- useMemo -->
+    如果 props 是一个对象，可以使用 useMemo 避免父组件每次都重新创建该对象
+    const person = useMemo(
+        () => ({ name, age }),
+        [name, age]
+    );
+
+    更好的方法是确保组件在其 props 中接受必要的最小信息 - 受单独的值而不是整个对象
+
+<!-- 将一个函数传递给记忆化（memoized）组件方式 -->
+1.组件外声明它
+2.useCallback 在重新渲染之间缓存其定义

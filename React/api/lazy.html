@@ -1,0 +1,14 @@
+组件第一次被渲染之前延迟加载
+
+<!-- load  -->
+load: 一个返回 Promise的函数
+React 不会在首次渲染调用 load 函数
+返回的 Promise 將被缓存，因此不会多次调用 load 函数
+
+<!-- 返回值 -->
+返回一个 React 组件
+搭配 <Suspense> 作為提示
+
+<!-- 引用 -->
+import()
+必须 default 导出

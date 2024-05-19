@@ -1,7 +1,35 @@
+<!-- 特殊null/undefined -->
+//這段講法我第一次看到
+undefined: 未定義的原始值
+null: 未定義的對象值
+
+<!-- null辨識 -->
+null: typeof null === 'object' 這個是一個bug 知道就好
+
+<!-- 辨識明確類型方法 -->
+Object.prototype.toString.call() 
+
+    <!--  -->
+    const a =100; Object.prototype.toString.call(a) // "[object Number]"
+    這是因為萬物皆對象
+    這也說明為何 原始Number類型 和 Number對象 完全是不同的東西
+
+<!-- 類 -->
+instanceof
+
+<!--  -->
+只需要搞懂
+1.typeof
+2.Object.prototype.toString.call()
+3.instanceof 
+
 <!-- 物件複製方法 -->
 let obj = {}
 
 let obj1 = object.assign({}, obj) 淺層
 let obj2 = {...obj} 淺層
-let obj3 = json.parse(json.stringify(obj)) 深層
+let obj3 = Json.parse(Json.stringify(obj)) 深層
 let obj4 = structuredClone(obj) 深層
+
+<!-- 比較 -->
+Json.stringify(obj1) === Json.stringify(obj2) 

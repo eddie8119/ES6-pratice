@@ -1,12 +1,17 @@
 
 生命週期開始-
-DOMContentLoaded: 
+load 事件: 是在網頁「所有」資源載入完成 才會觸發
+DOMContentLoaded 事件:  DOM 結構解析後就會被觸發 
+<!-- DOMContentLoaded  -->
 瀏覽器已完全載入HTML，DOM 樹建立完成。但外部資源可未載入完成: CSS 樣式、圖片等可能還沒完全載入
-DOMContentLoaded 偵測什麼時候可以執行JavaScript腳本
-連結到知識 async和defer
+沒有 DOM 節點，沒辦法操作  因此 DOMContentLoaded 偵測什麼時候可以執行JavaScript腳本
+所有延迟脚本下载和执行完毕后，触发 DOMContentLoaded 事件
+DOMContentLoaded 不会等待样式表加载
 
-load: 
-HTML解析完成 + 外部資源: 圖片，樣式載入完成。所有資源都完整載入
+<!-- load:  -->
+HTML解析完成 + 外部資源: 圖片，樣式載入完成。"所有資源都完整載入，才會被觸發"
+load 會是在 DOMContentLoaded 之後被觸發
+JavaScript 的邏輯會去改動到樣式、圖片等，就會更適合用 load 而非 DOMContentLoaded
 
 
 生命週期結尾-

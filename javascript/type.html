@@ -1,0 +1,8 @@
+<!-- 原始數據 為何可以有方法 -->
+var s = 'abcde'
+s.substr(1, 3) //bcd
+
+<!-- 看不見的過程 -->
+create a wrapper object from the primitive value 
+var ss = new String(s)  //object
+ss.substr(1, 3) //bcd

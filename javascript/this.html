@@ -1,12 +1,20 @@
 <!-- 定義 -->
-this is the object that the function is a property of
+this is the object that the function is a property of 
+(who is calling me)
 
 <!-- window -->
 在全愈定義的功能 調用時 this 就是指向window
 不想看到window: 用use strict
 
-<!-- 2個主要用途 -->
+<!-- this 2個主要用法 -->
 1.gives methods acess to their object
 2.excute some code for multiple object
 
 <!--dynamic scope lexical scope -->
+all the matter is how it gets called 和call他的過程有關
+
+困惑: this指向window
+解法:
+1. 使用箭頭函式 -> 把函式轉換成lexical scope 讓this指向物件
+2. 使用bind(指定物件)
+3. create reference -> var self = this

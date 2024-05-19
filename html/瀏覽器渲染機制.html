@@ -1,5 +1,4 @@
-Browser Rendering
-
+<!-- Browser Rendering -->
 解析 HTML 並建構 DOM tree。
 解析 CSS 並建構 CSSOM tree。
 將 DOM tree 和 CSSOM tree 合成一個 render tree。
@@ -7,6 +6,40 @@ Browser Rendering
 將所有節點繪製 (paint) 到螢幕上。
 瀏覽器會再透過合成 (compositing)，將資訊渲染到畫面上。
 
+<!-- Document Object Model -->
+建構一個名為 Node 的 JavaScript 物件。DOM 節點（也就是 Node 物件）
+所有的 HTML 元素都會被轉換成 JS 物件
+DOM Tree
+
+<!-- CSS Object Model（CSSOM） -->
+建構起 DOM 之後 讀取 CSS
+依照 selector 的標記套用至目標的 DOM 元素上
+預設值；繼承規則。這樣的行為叫 Cascading of Styles（階層樣式）
+
+<!-- Render Tree -->
+透過 render tree 來計算 layout（排版）
+不會包含那些在畫面中不佔有空間的節點。
+display:none時不會出現在 render tree 中。
+visibility:hidden或是opacity:0 仍然在畫面中佔有空間
+
+<!-- Layout（排版）階段 -->
+節點建構排版
+計算每個節點在螢幕上的像素尺存以及確切的位置
+又被稱作 reflow 或是 browser reflow
+捲動螢幕、調整視窗大小或是修改 DOM 元素時，都會觸發 layout 的程序
+
+<!-- Paint（繪圖）階段 -->
+目前幾何關係位置有可能相互重疊
+瀏覽器會建構出 layer（圖層） 管理
+每一個 layer 中，瀏覽器會依據元素的可視屬性 光柵化
+
+<!-- Compositing（組合）階段 -->
+目前為止，瀏覽器仍然沒有在螢幕上產生任何畫面。
+我們擁有的是許多預期將被依序繪製到畫面中的 layer
+layer（點陣圖格式） 會透過 GPU 被繪製到螢幕中
+
+
+<!--  -->
 關鍵描述:
 樹狀的資料結構
 
@@ -15,6 +48,7 @@ CSSOM: 透過CSS選擇器（CSS selector），我們可以指定 DOM 元素並�
 並不包含了不會被顯示在畫面中的元素，例如<link>、<title>以及<script>等等
 
 render tree 結合了 DOM 以及 CSSOM 產生另一個樹狀結構
+
 
 https://medium.someone.tw/web-%E7%80%8F%E8%A6%BD%E5%99%A8%E5%A6%82%E4%BD%95%E7%B9%AA%E8%A3%BD%E7%B6%B2%E9%A0%81-%E6%8E%A2%E8%A8%8E-dom-cssom-%E8%88%87%E6%B8%B2%E6%9F%93-%E7%BF%BB%E8%AD%AF-e9ba8c2be451
 https://aijishu.com/a/1060000000007166#item-3-5

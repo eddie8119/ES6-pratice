@@ -1,0 +1,13 @@
+上下文使得组件能够无需通过显式传递参数的方式 将信息逐层传递。
+
+<!-- 創建 -->
+createContext 返回一个 上下文对象。
+const ThemeContext = createContext('light');
+
+<!-- 讀取 -->
+上下文对象通过将它传给 useContext() 来读取上下文
+const theme = useContext(ThemeContext);
+
+<!-- 提供直 -->
+可以提供来自其他组件的其他的、动态变化的值
+<ThemeContext.Provider value={theme}></ThemeContext.Provider>
