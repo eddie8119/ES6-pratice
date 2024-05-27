@@ -1,9 +1,22 @@
+<!-- Execution Context creation phase -->
+創建三個:
+variable environment
+outer environment
+this
+
+<!-- 當this出現在物件裡的方法 -->
+this指向包含他的物件
+    <!-- pattern -->
+    var self = this;
+    指向同一個地址
+    接著都用 self 做操作 就不需要考慮this指向問題
+
 <!-- 定義 -->
 this is the object that the function is a property of 
 (who is calling me)
 
 <!-- window -->
-在全愈定義的功能 調用時 this 就是指向window
+在全域定義的功能 調用時 this 就是指向window
 不想看到window: 用use strict
 
 <!-- this 2個主要用法 -->
@@ -18,3 +31,41 @@ all the matter is how it gets called 和call他的過程有關
 1. 使用箭頭函式 -> 把函式轉換成lexical scope 讓this指向物件
 2. 使用bind(指定物件)
 3. create reference -> var self = this
+
+
+<!--  -->
+一但脫離了物件導向，其實 this 就沒有什麼太大的意義
+要理解 this 的第一步就是告訴自己：「一但脫離了物件，就不太需要關注 this 的值，因為沒什麼意義」
+
+<!-- 沒什麼太大意義的 this - 預設綁定 -->
+嚴格模式底下就都是undefined
+非嚴格模式，瀏覽器底下是window
+非嚴格模式，node.js 底下是global
+
+<!-- 更改 this 的值 -->
+    <!-- call 跟 apply -->
+    call 跟 apply很像，只是參數的傳遞方式不一樣
+    apply: 差別傳進去的參數是一個 array
+
+    第一個參數傳什麼， this 的值就會是什麼
+    還會覆蓋
+
+    <!-- bind -->
+    bind 會回傳一個新的 function
+    const myHello = hello.bind('my')
+
+<!-- 物件中的 this -->
+this 的值跟作用域跟程式碼的位置在哪裡完全無關，只跟「你如何呼叫」有關
+this 的值會根據你怎麼呼叫它而變得不一樣 (call、apply 跟 bind 就是其中一個範例)
+
+一個是靜態（作用域）、一個是動態（this）。
+要看作用域，就看這個函式在程式碼的「哪裡」；要看 this，就看這個函式「怎麽」被呼叫。
+
+    <!-- 技巧 -->
+    可以把所有的 function call，都轉成利用call的形式來看
+
+    obj.hello() // 1
+    obj.hello.call(obj) // 轉成 call
+    const hey = obj.hello
+    hey() // undefined
+    hey.call() // 轉成 call

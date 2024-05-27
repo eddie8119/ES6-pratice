@@ -1,0 +1,32 @@
+重新開始 永遠執行最後一次的
+
+
+function debounce (func) {  
+    return function () {
+        func()
+    }
+}
+
+function debounce (func, delay) {  
+    let timer // 這裡是個閉包 讓他們之間有聯繫
+    return function () {
+        clearTimeout(timer) //多個函數共用一個外部變量
+        timer = setTimeout(() => {
+            func()        
+        }, delay)       
+    }
+}
+
+<!-- 問題 -->
+為什麼要寫 
+return function () {
+    func()
+}
+//你返回的是一個新的函數，這個新的函數在被調用時會執行
+
+而不直接寫 
+return func() 呢？ 
+// return func() 時，你實際上是在調用 func 函數，並返回它的結果
+
+
+

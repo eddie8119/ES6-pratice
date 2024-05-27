@@ -1,0 +1,51 @@
+https:medium.com/%E6%89%8B%E5%AF%AB%E7%AD%86%E8%A8%98/react-hooks-usestate-vs-usereducer-b14966ad37dd
+useReducer 修改過後的 component 精簡了許多，由於複雜的 state 邏輯都移動到了 reducer 裡面，我們在閱讀程式碼時就有跡可循，知道 callback 裡要做哪些事情，不用在閱讀程式碼時被各種複雜的 setState 交互弄亂自己的思考邏輯。
+
+而且這篇文章中使用的網頁應用如果再大一些，需要控制的 fitler 數量很多，就要用很多的 useState 跟 callback 來處理複雜的 state 邏輯，為了後續維護，轉而用 useReducer 反而是更好的一種做法
+
+
+
+useReducer 是 useState 的一種替代性寫法
+1.乾淨
+2.非常多的 callback 需要綁在 useCallback 裡面
+3.dispatch 不會隨著 re-render 而重新分配記憶體位置，在作為 props 傳入到 child component 中時也可以不用擔心沒有 useMemo 而造成 re-render 的問題。
+4.可以用action 控制state
+
+
+
+useReducer會比useState更適用
+判斷:
+1.牽扯2個以上的state更新
+2.state是很多屬性的物件 巢狀
+
+
+<!-- reducer -->
+为了降低这种复杂度
+将组件的所有状态更新逻辑整合到一个外部函数中，这个函数叫作 reducer。
+可以在一个组件中同时使用 useState 和 useReducer
+
+<!-- 實作 -->
+    <!-- 1.将设置状态的逻辑修改成 dispatch 的一个 action  -->
+    dispatch 一个 “action” 来指明
+    dispatch 的对象叫做 “action”
+    type 
+
+    <!-- 2.编写一个 reducer 函数  -->
+    状态作为第一个参数  action 对象作为第二个参数
+    reducer 返回 下一个 状态
+
+    <!-- 3.在组件中使用 reducer -->
+    import { useReducer } from 'react';
+    const [tasks, dispatch] = useReducer(tasksReducer, initialTasks);
+
+<!-- 对比 useState 和 useReducer -->
+减少代码量
+可读性
+可调试性: 打印日志
+
+<!-- 编写一个好的 reducers -->
+reducers 必须是纯粹的 它们不应该包含异步请求、定时器或者任何副作用
+actions 会排队直到下一次渲染
+以不可变值的方式去更新 对象 和 数组
+
+每个 action 都描述了一个单一的用户交互，即使它会引发数据的多个变化

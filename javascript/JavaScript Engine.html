@@ -1,16 +1,32 @@
 <!-- v8 -->
 parser 成樹狀圖 AST
 
-<!-- 2種翻譯器 -->
-<!-- interpreter -->
-AST轉為bytecode
+<!-- 2種翻譯器- -->
+人寫的 轉換成機器懂的語言
+編譯器 / 直譯器
 
-<!-- compiler -->
-A語言翻成 B語言 machine code
-一開始有預習的時間
+    <!-- interpreter -->
+    AST轉為bytecode
+
+    <!-- compiler -->
+    A語言翻成 B語言 machine code
+    一開始有預習的時間
+
+    直譯器跟編譯器最大的差別在於「執行」
+    編譯:這個步驟就是把原始碼 A 編譯為目的碼 B
+    而直譯:就是你輸入原始碼 A，輸出就直接是你程式碼裡面要執行的語義
+
+    把原始碼編譯成某種中間碼再去執行
+    拋開「JS 就是要一行行執行」的舊觀念並擁抱「其實主流 JS 引擎都有編譯這個步驟」
+    VO 這個東西其實就是編譯階段
+    hoisting 其實就是在編譯這個階段做處理的
+
 
 <!--  -->
 V8結合了兩者 看誰好就用誰
+
+<!-- byte code -->
+介於高階語言與機器碼中間的語言
 
 <!--  -->
 【JavaScript最全最深入教程】1. JavaScript Enginehttps://www.bilibili.com/video/BV1Qp4y1c7Q5/?spm_id_from=333.788

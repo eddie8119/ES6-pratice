@@ -22,11 +22,38 @@
 
 <!-- Execution Context 執行上下文 -->
 函数被调用时会创建个执行上下文对象，用于存储函数执行时涉及的相关的数据
+
     <!-- 全局作用域创建 -->
     在首次执行脚本时创建的
+
     <!-- 函数执行上下文创建 -->
     分为两个阶段：创建阶段 / 执行阶段
 
+<!-- invocation -->
+看到() 創造一個新的 execution context
+結束該函數 該execution context 會離開call stack
+this變數 被創造給那個函數 ? 裡面的變數 在创建阶段建立 ?
+
+<!-- functions context -->
+
+<!-- variable environments -->
+每個execution context都有自己的variable environment
+invocation 時 會創造 execution context 和 variable environment
+變數都在自己的scope裡面 互相不關連
+
+<!-- Scope Chain -->
+
+    <!-- 外部參照 -->
+    每個 execution context 有一個參照的外部環境
+    lexical environment - 程式被寫出來的物理位置(而這位置可能就在人家的execution context裡面)
+
+<!-- 同步非同步 -->
+瀏覽器有很多引擎 只有js引擎是同步的
+"非同步部分 發生在js引擎外"
+js引擎外的事件 放在 queue
+stack空了 global execution context 清除了 queue才會處理 並且是同步處理
+
+<!--  -->
 https://darjun.github.io/2018/12/03/javascript-execution-context/
 
 在去了解EventLoop之前，

@@ -1,0 +1,8 @@
+<!-- 實作 -->
+    <!-- 1.创建 context -->
+    export const LevelContext = createContext(1);
+    <!-- 2.使用 Context -->
+    const level = useContext(LevelContext);
+    <!-- 3.提供 context -->
+    <LevelContext.Provider value={level}>      
+    </LevelContext.Provider>

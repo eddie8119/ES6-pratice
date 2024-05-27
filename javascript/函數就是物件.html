@@ -1,0 +1,16 @@
+要把 函數 視為物件(事實就是) 並且程式碼就是該物件的屬性之一
+在其他語言這是不可能的，但在 JavaScript 中，函數就是物件，所以函數可以有屬性和方法
+
+<!-- 函數是物件 -->
+可連結到 primitive  物件 函數
+
+<!-- 函數有的特殊屬性 -->
+name 可以是匿名
+code 你寫的程式碼 / 呼叫 invocable
+
+<!-- example -->
+function greet() {
+  console.log("hi");
+}
+greet.language = "english";
+console.log(greet.language);

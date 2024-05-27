@@ -32,3 +32,57 @@ fetch("url")
 axios("url").then((json) => {
   console.log(json);
 });
+
+// 圖片加載
+const imgPromise = (url) => {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.src = url;
+    img.onload = () => {
+      resolve(img);
+    };
+    img.onerror = () => {
+      reject(new Error("img error"));
+    };
+  });
+};
+
+imgPromise(imgAddress)
+  .then((img) => {
+    document.body.appendChild(img);
+  })
+  .catch((err) => {
+    document.body.innerHTML = err;
+  });
+
+//紅綠燈
+function red() {
+  console.log("red");
+}
+function green() {
+  console.log("green");
+}
+function yellow() {
+  console.log("yellow");
+}
+
+function lightUp(duration, cb) {
+  //返回一個 Promise。這個 Promise 在指定的持續時間後執行回調函數
+  return new Promise((resolve) =>
+    setTimeout(() => {
+      cb();
+      resolve();
+    }, duration)
+  );
+}
+
+function alternateLights() {
+  // Promise.resolve() 可以使你的程式碼更加一致和清晰，因為它明確地表示這是一個 Promise 鏈的開始
+  Promise.resolve()
+    .then(() => lightUp(3000, red))
+    .then(() => lightUp(2000, green))
+    .then(() => lightUp(1000, yellow))
+    .then(() => alternateLights());
+}
+
+alternateLights();
