@@ -1,0 +1,19 @@
+<!-- computed -->
+接受對象 必須是響應式對象
+
+<!-- watch -->
+    <!-- watch reactive -->
+    watch reactive 第一個參數要用函數包裹
+
+    watch(() => state.count, (newVal, oldVal) => {
+    console.log(newVal, oldVal)
+    })
+
+    <!-- 引用类型 -->
+    引用类型 老值會被改變 因為是同一個引用
+    於是要深拷貝
+    import { cloneDeep } from 'lodash'
+
+    watch(() => _cloneDeep(user), (newVal, oldVal) => {
+        console.log(newVal, oldVal)
+    })

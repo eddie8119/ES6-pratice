@@ -32,7 +32,6 @@ all the matter is how it gets called 和call他的過程有關
 2. 使用bind(指定物件)
 3. create reference -> var self = this
 
-
 <!--  -->
 一但脫離了物件導向，其實 this 就沒有什麼太大的意義
 要理解 this 的第一步就是告訴自己：「一但脫離了物件，就不太需要關注 this 的值，因為沒什麼意義」
@@ -42,7 +41,9 @@ all the matter is how it gets called 和call他的過程有關
 非嚴格模式，瀏覽器底下是window
 非嚴格模式，node.js 底下是global
 
-<!-- 更改 this 的值 -->
+<!-- 控制更改 this 的值 -->
+所有函數都能取用 call、apply、bind 這三個方法
+
     <!-- call 跟 apply -->
     call 跟 apply很像，只是參數的傳遞方式不一樣
     apply: 差別傳進去的參數是一個 array
@@ -52,7 +53,7 @@ all the matter is how it gets called 和call他的過程有關
 
     <!-- bind -->
     bind 會回傳一個新的 function
-    const myHello = hello.bind('my')
+    const myHello = hello.bind('my') 新拷貝的function
 
 <!-- 物件中的 this -->
 this 的值跟作用域跟程式碼的位置在哪裡完全無關，只跟「你如何呼叫」有關

@@ -1,0 +1,49 @@
+<!-- watchEffect -->
+watchEffect(() =>{   
+    // get 依賴收集
+    console.log(state.count)
+}) 
+
+    <!-- oninvalidate -->
+    可以做消除副作用回調工作
+
+    watchEffect((oninvalidate) =>{
+    
+        oninvalidate(() => {
+            console.log('stop')
+        })
+    
+        console.log(state.count)
+    }) 
+   
+    <!-- oninvalidate 觸發時機 -->
+    1.重新觸發 watch 時
+    2.組件銷毀的時候
+
+    <!-- stop停止觀察 -->
+    const stop = watchEffect((oninvalidate) =>{
+    
+        oninvalidate(() => {
+            console.log('stop')
+        })
+    
+        console.log(state.count)
+    }) 
+
+    const stopwatch = () => {
+        stop && stop()  //保護機制，以防止在 stop 為 null 或 undefined 時調用函數
+    }
+   
+<!-- watch vs watchEffect -->
+1. watch 可以明確知道觀察的是誰
+2. watch 可以獲取之前的舊值
+
+watchEffect:
+1.一上來就調用 (watch要設定第三個參數)
+2.不需要老值時 這樣用更方便
+3.可以觀察多個值 (watch([a,b,c],()=>{}))
+
+<!-- 時機 -->
+在模板渲染之前 調用 watchEffect
+    <!-- 改成在模板渲染之後 調用 watchEffect -->
+    第二個參數加上 {flush: 'post'}
