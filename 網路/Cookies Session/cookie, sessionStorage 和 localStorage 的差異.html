@@ -14,9 +14,10 @@ section id
 -stuts
 -不同
 
-////////////////
+
+<!--  -->
 cookie, sessionStorage 和 localStorage 的差異: https://www.explainthis.io/zh-hant/swe/cookie-sessionstorage-localstorage-difference
-伺服器端會在回應的標頭中，添加 Set-Cookie
+伺服器端會在回應的標頭中，自動添加 Set-Cookie
 
 使用場景:
 cookie-辨識用戶的場景
@@ -24,7 +25,7 @@ localStorage -跨頁面的數據傳遞、需要長期保存的資料
 sessionStorage-表單資料保存
 
 生命週期:
-cookie-關閉瀏覽器
+cookie-關閉瀏覽器 除非設定到期時間
 localStorage -手動
 sessionStorage-每次關閉該頁面
 
@@ -37,7 +38,6 @@ HTTP 請求:
 
 //////////////////////
 只有cookie 有expire設定
-
 localStorage and sessionStorage 沒有expire設定
 localStorage是"靠手動或程式清除" ;   sessionStorage是"關閉瀏覽器就清除"
 
@@ -49,7 +49,7 @@ localStorage
 
 
 
-Web Storage:
+<!-- Web Storage: -->
 是一種瀏覽器提供的用戶端儲存解決方案
 兩種儲存方式：localStorage和sessionStorage。
 

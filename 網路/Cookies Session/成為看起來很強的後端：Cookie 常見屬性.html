@@ -1,0 +1,20 @@
+第一方Cookie:
+同網域
+
+第三方Cookie:
+不同網域
+跨網域追蹤
+
+<!--  -->
+除了sid機制外 保護資料還有這些屬性 不拿到就會安全
+
+Cookie屬性:
+-作用域:
+    Domain: 不同網域就不帶Cookie
+    Path:
+    Secure: 依據有沒有https
+    SameSite: Strict / None / Lax (server端控制 與瀏覽器的控制分開討論)
+-時間:
+    Expires / Max-Age (沒有帶的話 就使用Session Cookie 瀏覽器關掉就沒了)
+-存取:
+    HttpOnly- 不給js使用

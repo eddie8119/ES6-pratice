@@ -1,0 +1,32 @@
+27丨通过CORS实现跨域访问
+
+<!-- 跨域資源共享 -->
+前後端分離 前後端在不同的域中
+前後嵌入第三方資源
+
+<!-- 同源政策 -->
+同協定/同網域/同阜號  路徑 參數 可不同
+限制網頁訪問不同源的資源 提升安全性
+目的:保證用戶信息安全 是對js腳本限制 不是對瀏覽器的限制 (呼應:瀏覽器 接收到來自server的 acess-control-allow-origin:* 有符合才會將響應內給js)
+
+<!-- 跨域資源共享機制 -->
+主要在後端配置
+作法分兩類: 直接 / 預檢
+
+    <!-- 直接請求 -->
+    header 中 origin 重要 就是網頁的源 由瀏覽器設置
+    瀏覽器 接收到來自server的 acess-control-allow-origin:* 有符合才會將響應內給js
+
+    <!-- 預檢請求 -->
+    預檢:帶有自訂議header / 非post get 其他方法
+
+    先使用http的 options方法發送預檢請求
+    請求3個字段: origin / acess-control-request-methods / acess-control-request-headers
+    響應3個字段: acess-control-allow-origin / acess-control-allow-methods / acess-control-allow-headers
+    上面通過 才發實際請求
+
+<!-- 攜帶身分憑據的請求 -->
+    要求更嚴格 攜帶了cookie 認證敏感數據
+    <!-- 直接請求 -->
+    響應的 acess-control-allow-origin 不能是* 必須是當前源
+    acess-control-allow-credentials 要為true

@@ -1,0 +1,30 @@
+影片:
+26丨浏览器的同源策略
+認識 Same-Origin Policy and CORS
+CORS跨源资源共享是什么? 5分钟搞懂
+什么是CORS
+
+
+本質上由服務端 決定要不要回答 後端才是決定性的
+
+<!-- 跨域解法: -->
+JSONP
+websocket
+CORS
+cross-document messaging(html5 postMessage)
+
+<!-- JSONP -->
+script tag
+html tag 可以跨域 突破限制
+因為是 html 相容性很高
+
+不推薦原因: 
+只能適用get請求 不能post
+script tag 容易植入惡意代碼
+後端 callback
+
+<!-- CORS -->
+跨域資源共享
+土炮處理(不建議這做法): response header: acess-control-allow-origin:*
+直接修改響應頭 res.header("Acess-Control-Allow-Origin", "*")
+建議用: middleware
